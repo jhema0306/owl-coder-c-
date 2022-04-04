@@ -1,0 +1,16 @@
+
+bool decode (string S)
+{
+    // your code here
+    int j=0;
+    string t="hello";
+    int n=S.size();
+       for(int i=0;i<n;i++)
+        {
+        if(t[j]==S[i])
+        j++;
+        if(j>4)
+           return true;
+        }
+return false;
+}
