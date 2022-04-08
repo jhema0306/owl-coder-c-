@@ -1,0 +1,10 @@
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+      pair<vector<int>::iterator,vector<int>::iterator> range;
+        range = equal_range(nums.begin(), nums.end(), target);
+        int targetleft = distance(nums.begin(), range.first);
+        if (targetleft == nums.size() || nums[targetleft] != target) return {-1, -1};
+        return {targetleft, (int)distance(nums.begin(), range.second) - 1};
+    }
+};  
