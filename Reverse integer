@@ -1,0 +1,19 @@
+class Solution {
+    public int reverse(int x) {
+        int temp=0;
+        while (x != 0)
+        {
+            try
+            {
+           temp=Math.multiplyExact(temp,10);
+                  temp=Math.addExact(temp,x%10);
+            }
+                catch(ArithmeticException e) {
+                    System.out.println("overflow");
+                    return 0;
+                }
+                x/=10;
+            }
+            return temp;
+                }
+    }
